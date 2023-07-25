@@ -1,0 +1,502 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "tarea",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1457022470905.785838305821"
+              }
+            },
+            {
+              "name": "materia",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1457022470905.1236711183053"
+              }
+            },
+            {
+              "name": "day",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "isLessThanOrEqualTo",
+                  "prompt": "Slot.Validation.106627826526.1203497560995.233234592623",
+                  "value": "31"
+                },
+                {
+                  "type": "isGreaterThanOrEqualTo",
+                  "prompt": "Slot.Validation.106627826526.1203497560995.1606208073040",
+                  "value": "1"
+                }
+              ],
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.106627826526.1203497560995"
+              }
+            },
+            {
+              "name": "month",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1457022470905.154536608380.363292148387"
+                }
+              ],
+              "type": "tipoMes",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1457022470905.154536608380"
+              }
+            },
+            {
+              "name": "year",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1128366570998.244392115447.964839263040"
+                }
+              ],
+              "type": "tipoYear",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1128366570998.244392115447"
+              }
+            }
+          ],
+          "name": "RegisterHomeworkIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "numero",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.272510444083.399903657364"
+              }
+            }
+          ],
+          "name": "deleteIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "number",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1423812099104.1531927881705"
+              }
+            }
+          ],
+          "name": "remindIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "tarea",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "my task is {tarea}",
+                "the task is {tarea}"
+              ]
+            },
+            {
+              "name": "materia",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "it\u0027s for {materia}",
+                "the subject is {materia}",
+                "the subject is {materia}",
+                "{materia}"
+              ]
+            },
+            {
+              "name": "day",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "it\u0027s due on {day}",
+                "{day}",
+                "{day}"
+              ]
+            },
+            {
+              "name": "month",
+              "type": "tipoMes",
+              "samples": [
+                "in {month}",
+                "{month}"
+              ]
+            },
+            {
+              "name": "year",
+              "type": "tipoYear",
+              "samples": [
+                "in the year {year}",
+                "in {year}",
+                "in the year {year}",
+                "in {year}",
+                "{year}"
+              ]
+            }
+          ],
+          "name": "RegisterHomeworkIntent",
+          "samples": [
+            "the delivery date is {day} of {month} of {year}",
+            "register a task",
+            "the task is {tarea}",
+            "the task is {day}",
+            "the day {day}",
+            "For the day {day}",
+            "my task is {tarea}",
+            "the subject is {materia}",
+            "the subject is {materia}",
+            "my task is {tarea}",
+            "register my task"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "sayHomeworkIntent",
+          "samples": [
+            "how much time is left to submit my task",
+            "how much time is left"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "homeworkIntent",
+          "samples": [
+            "show me your tasks",
+            "what are my tasks"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "numero",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "task {numero}",
+                "{numero}"
+              ]
+            }
+          ],
+          "name": "deleteIntent",
+          "samples": [
+            "task {numero}",
+            "delete a task",
+            "delete the task",
+            "delete task {numero}",
+            "delete my tasks"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "formatIntent",
+          "samples": [
+            "format"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "task {number}",
+                "{number}"
+              ]
+            }
+          ],
+          "name": "remindIntent",
+          "samples": [
+            "set a reminder",
+            "set a reminder for task {number}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "twelfth month"
+                ],
+                "value": "December"
+              },
+              "id": "12"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "eleventh month"
+                ],
+                "value": "November"
+              },
+              "id": "11"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "tenth month"
+                ],
+                "value": "October"
+              },
+              "id": "10"
+            },
+            {
+              "name": {
+                "value": "September"
+              },
+              "id": "9"
+            },
+            {
+              "name": {
+                "value": "August"
+              },
+              "id": "8"
+            },
+            {
+              "name": {
+                "value": "July"
+              },
+              "id": "7"
+            },
+            {
+              "name": {
+                "value": "June"
+              },
+              "id": "6"
+            },
+            {
+              "name": {
+                "value": "May"
+              },
+              "id": "5"
+            },
+            {
+              "name": {
+                "value": "April"
+              },
+              "id": "4"
+            },
+            {
+              "name": {
+                "value": "March"
+              },
+              "id": "3"
+            },
+            {
+              "name": {
+                "value": "February"
+              },
+              "id": "2"
+            },
+            {
+              "name": {
+                "value": "January"
+              },
+              "id": "1"
+            }
+          ],
+          "name": "tipoMes"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "two thousand twenty-four"
+              },
+              "id": "2024"
+            },
+            {
+              "name": {
+                "value": "two thousand twenty-three"
+              },
+              "id": "2023"
+            }
+          ],
+          "name": "tipoYear"
+        }
+      ],
+      "invocationName": "task reminder"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "The task is {tarea} and it\u0027s for the subject {materia}, but what day is it due?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Alright, but what day is it due?"
+          }
+        ],
+        "id": "Elicit.Slot.106627826526.1203497560995"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Give me a day between one and thirty-one"
+          }
+        ],
+        "id": "Slot.Validation.106627826526.1203497560995.233234592623"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Give me a day between one and thirty-one"
+          }
+        ],
+        "id": "Slot.Validation.106627826526.1203497560995.1606208073040"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please enter a valid month"
+          }
+        ],
+        "id": "Slot.Validation.1457022470905.154536608380.363292148387"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Alright, you\u0027ve provided the day {day}, but what month?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Which month?"
+          }
+        ],
+        "id": "Elicit.Slot.1457022470905.154536608380"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Tell me, what\u0027s the task?"
+          }
+        ],
+        "id": "Elicit.Slot.1457022470905.785838305821"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Alright, you\u0027ve provided the task {tarea}, but what subject is it for?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Alright, but what subject?"
+          }
+        ],
+        "id": "Elicit.Slot.1457022470905.1236711183053"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Enter a year between two thousand twenty-three and two thousand twenty-four"
+          }
+        ],
+        "id": "Slot.Validation.1457022470905.370769994603.779845706888"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Enter a year between two thousand twenty-three and two thousand twenty-four"
+          }
+        ],
+        "id": "Slot.Validation.1457022470905.370769994603.1180120674809"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which year?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Alright, you\u0027ve provided the day {day} and the month {month}, but what year?"
+          }
+        ],
+        "id": "Elicit.Slot.1128366570998.244392115447"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Give me a year between two thousand twenty-three and two thousand twenty-four"
+          }
+        ],
+        "id": "Slot.Validation.1128366570998.244392115447.964839263040"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which task number?"
+          }
+        ],
+        "id": "Elicit.Slot.272510444083.399903657364"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Alright, what task number?"
+          }
+        ],
+        "id": "Elicit.Slot.1423812099104.1531927881705"
+      }
+    ]
+  }
+}

@@ -1,0 +1,502 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "tarea",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1457022470905.785838305821"
+              }
+            },
+            {
+              "name": "materia",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1457022470905.1236711183053"
+              }
+            },
+            {
+              "name": "day",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "isLessThanOrEqualTo",
+                  "prompt": "Slot.Validation.106627826526.1203497560995.233234592623",
+                  "value": "31"
+                },
+                {
+                  "type": "isGreaterThanOrEqualTo",
+                  "prompt": "Slot.Validation.106627826526.1203497560995.1606208073040",
+                  "value": "1"
+                }
+              ],
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.106627826526.1203497560995"
+              }
+            },
+            {
+              "name": "month",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1457022470905.154536608380.363292148387"
+                }
+              ],
+              "type": "tipoMes",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1457022470905.154536608380"
+              }
+            },
+            {
+              "name": "year",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1128366570998.244392115447.964839263040"
+                }
+              ],
+              "type": "tipoYear",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1128366570998.244392115447"
+              }
+            }
+          ],
+          "name": "RegisterHomeworkIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "numero",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.272510444083.399903657364"
+              }
+            }
+          ],
+          "name": "deleteIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "number",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1423812099104.1531927881705"
+              }
+            }
+          ],
+          "name": "remindIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "tarea",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "mi tarea es {tarea}",
+                "la tarea es {tarea}"
+              ]
+            },
+            {
+              "name": "materia",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "es de {materia}",
+                "la asignatura es {materia}",
+                "la materia es {materia}",
+                "{materia}"
+              ]
+            },
+            {
+              "name": "day",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "se entrega el {day}",
+                "el {day}",
+                "{day}"
+              ]
+            },
+            {
+              "name": "month",
+              "type": "tipoMes",
+              "samples": [
+                "en {month}",
+                "{month}"
+              ]
+            },
+            {
+              "name": "year",
+              "type": "tipoYear",
+              "samples": [
+                "el año {year}",
+                "en el año {year}",
+                "el {year}",
+                "del {year} ",
+                "{year}"
+              ]
+            }
+          ],
+          "name": "RegisterHomeworkIntent",
+          "samples": [
+            "la fecha de entrega es el {day} de {month} del {year}",
+            "registra una tarea",
+            "la tarea es {tarea}",
+            "la tarea es {day}",
+            "el dia {day}",
+            "Para el dia {day}",
+            "mi pendiente es {tarea}",
+            "la asignatura es {materia}",
+            "la materia es {materia}",
+            "mi tarea es {tarea}",
+            "registra mi tarea"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "sayHomeworkIntent",
+          "samples": [
+            "cuanto falta para entregar mi tarea",
+            "cuanto falta"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "homeworkIntent",
+          "samples": [
+            "muestrame tus tareas",
+            "cuales son mis tareas"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "numero",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "tarea {numero}",
+                "{numero}"
+              ]
+            }
+          ],
+          "name": "deleteIntent",
+          "samples": [
+            "tarea {numero}",
+            "elimina una tarea",
+            "elimina la tarea",
+            "elimina la tarea {numero}",
+            "elimina mis tareas"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "formatIntent",
+          "samples": [
+            "formatea"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "la tarea {number}",
+                "{number}"
+              ]
+            }
+          ],
+          "name": "remindIntent",
+          "samples": [
+            "haz un recordatorio",
+            "haz un recordatorio de la tarea {number}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "doceabo mes"
+                ],
+                "value": "diciembre"
+              },
+              "id": "12"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "onceavo mes"
+                ],
+                "value": "noviembre"
+              },
+              "id": "11"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "decimo mes"
+                ],
+                "value": "octubre"
+              },
+              "id": "10"
+            },
+            {
+              "name": {
+                "value": "septiembre"
+              },
+              "id": "9"
+            },
+            {
+              "name": {
+                "value": "agosto"
+              },
+              "id": "8"
+            },
+            {
+              "name": {
+                "value": "julio"
+              },
+              "id": "7"
+            },
+            {
+              "name": {
+                "value": "junio"
+              },
+              "id": "6"
+            },
+            {
+              "name": {
+                "value": "mayo"
+              },
+              "id": "5"
+            },
+            {
+              "name": {
+                "value": "abril"
+              },
+              "id": "4"
+            },
+            {
+              "name": {
+                "value": "marzo"
+              },
+              "id": "3"
+            },
+            {
+              "name": {
+                "value": "febrero"
+              },
+              "id": "2"
+            },
+            {
+              "name": {
+                "value": "enero"
+              },
+              "id": "1"
+            }
+          ],
+          "name": "tipoMes"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "dos mil veinticuatro"
+              },
+              "id": "2024"
+            },
+            {
+              "name": {
+                "value": "dos mil veintitrés"
+              },
+              "id": "2023"
+            }
+          ],
+          "name": "tipoYear"
+        }
+      ],
+      "invocationName": "recordatorio de tareas"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "la tarea es {tarea} y es de la asignatura {materia} , pero que dia se entrega?"
+          },
+          {
+            "type": "PlainText",
+            "value": "vale, pero que dia se entrega?"
+          }
+        ],
+        "id": "Elicit.Slot.106627826526.1203497560995"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Dime un dia entre uno y treinta y uno"
+          }
+        ],
+        "id": "Slot.Validation.106627826526.1203497560995.233234592623"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Dime un dia entre uno y treinta y uno"
+          }
+        ],
+        "id": "Slot.Validation.106627826526.1203497560995.1606208073040"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ingresa un mes valido por favor"
+          }
+        ],
+        "id": "Slot.Validation.1457022470905.154536608380.363292148387"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "vale, me has pasado el dia {day} , pero de que mes?"
+          },
+          {
+            "type": "PlainText",
+            "value": "En que mes?"
+          }
+        ],
+        "id": "Elicit.Slot.1457022470905.154536608380"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Dime, cual es la tarea?"
+          }
+        ],
+        "id": "Elicit.Slot.1457022470905.785838305821"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "vale, me has pasado la tarea {tarea} , pero de que asignatura es?"
+          },
+          {
+            "type": "PlainText",
+            "value": "vale, pero que materia?"
+          }
+        ],
+        "id": "Elicit.Slot.1457022470905.1236711183053"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ingrese un año entre dos mil veinti tres y dos mil veinti cuatro"
+          }
+        ],
+        "id": "Slot.Validation.1457022470905.370769994603.779845706888"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ingrese un año entre dos mil veinti tres y dos mil veinti cuatro"
+          }
+        ],
+        "id": "Slot.Validation.1457022470905.370769994603.1180120674809"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "de que año?"
+          },
+          {
+            "type": "PlainText",
+            "value": "vale, me has pasado el dia {day} y el mes {month} , pero de que año?"
+          }
+        ],
+        "id": "Elicit.Slot.1128366570998.244392115447"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Dime un año entre dos mil veintitrés y dos mil veinticuatro"
+          }
+        ],
+        "id": "Slot.Validation.1128366570998.244392115447.964839263040"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "que numero de tarea?"
+          }
+        ],
+        "id": "Elicit.Slot.272510444083.399903657364"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "vale, que número de tarea?"
+          }
+        ],
+        "id": "Elicit.Slot.1423812099104.1531927881705"
+      }
+    ]
+  }
+}
